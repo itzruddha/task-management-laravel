@@ -13,29 +13,37 @@
     </script>
 </head>
 <body id="task">
-    <div class="container mt-5">
+    <div class="container mt-4">
         <h1 class="mb-4">Task List</h1>
-        <!-- Button to trigger the modal -->
-        <button type="button" class="btn btn-primary" onclick="task.open_modal()">
-            Add Task
-        </button>
-        <div class="row"> 
-            <input type="text" class="form-control"  id="taskNameSearch" placeholder="Search task name">
-            <select type="text" class="form-control"  id="employeeNameSearch">
-
-            </select>
-            <select type="text" class="form-control" id="taskStatus">
-                <option value="1">Pending</option>
-                <option value="2">Complete</option>
-            </select>
-
+        <div class="m-2">
+            <button type="button" class="btn btn-primary" onclick="task.open_modal()">
+                Add Task
+            </button>
+        </div>
+        <div class="row m-3"> 
+            <div class="col-3">
+                <input type="text" class="form-control"  id="taskNameSearch" placeholder="Search task name">
+            </div>
+            <div class="col-3">
+                <select type="text" class="form-control"  id="employeeNameSearch"></select>
+            </div>
+            <div class="col-2">
+                <select type="text" class="form-control" id="taskStatus">
+                    <option value="1">Pending</option>
+                    <option value="2">Complete</option>
+                </select>
+            </div>
+           <div class="col-2">
             <select type="text" class="form-control" id="taskpiority">
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
             </select>
-
+           </div>
+           <div class="col-2">
             <button type="button" class="btn btn-primary" onclick="task.search()">Search Task</button>
+           </div>
+            
         </div>
         <table class="table" id="taskTable">
             <thead>
