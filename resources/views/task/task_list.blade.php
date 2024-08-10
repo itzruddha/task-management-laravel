@@ -30,9 +30,9 @@
             </select>
 
             <select type="text" class="form-control" id="taskpiority">
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
             </select>
 
             <button type="button" class="btn btn-primary" onclick="task.search()">Search Task</button>

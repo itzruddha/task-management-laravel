@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\TaskType;
-use App\Models\Employee;
+use App\Models\User;
 use DB;
 
 class TaskManagementController extends Controller
@@ -28,7 +28,7 @@ class TaskManagementController extends Controller
 
     public function api_get_employee_list(){
 
-        $employee = Employee::all();
+        $employee = User::all();
 
         return response()->json($employee);
     }
@@ -36,8 +36,8 @@ class TaskManagementController extends Controller
     public function api_get_task_list(){
 
         $tasks = DB::table('task')
-        ->select('task.id', 'task.task_title', 'task.task_description', 'task.task_piority','employee.employee_name as employee_name', 'task.task_status')
-        ->join('employee', 'task.employee_id', '=', 'employee.id')->orderBy('id', 'DESC')
+        ->select('task.id', 'task.task_title', 'task.task_description', 'task.task_piority','users.name as employee_name', 'task.task_status')
+        ->join('users', 'task.employee_id', '=', 'users.id')->orderBy('id', 'DESC')
         ->get();
 
         return response()->json($tasks);

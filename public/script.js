@@ -27,11 +27,7 @@ window.task = {
 
     listeners() {
         var self = task;
-
        
-
-       
-
         $.ajax({
             url: baseurl+'/api/v1/get-task-type',
             type: 'GET',
@@ -69,7 +65,7 @@ window.task = {
                 var row ='';
                 $.each(response, function(index, task) {
                     var row =
-                        `<option value='${task.id}'>${task.employee_name}</option>`;
+                        `<option value='${task.id}'>${task.name}</option>`;
 
                        console.log('tasktype', row)
                        
@@ -281,15 +277,15 @@ window.task = {
 
                     var tsk = '';
 
-                    if(task.task_piority === 'High'){
+                    if(task.task_piority === 'high'){
                         var tsk = `<div class="container text-danger" >${task.task_piority}</div>`;
                     }
 
-                    if(task.task_piority === 'Medium'){
+                    if(task.task_piority === 'medium'){
                         var tsk = `<div class="container text-success" >${task.task_piority}</div>`;
                     }
 
-                    if(task.task_piority === 'Low'){
+                    if(task.task_piority === 'low'){
                         var tsk = `<div class="container text-warning" >${task.task_piority}</div>`;
                     }
                     var row = '<tr>' +
